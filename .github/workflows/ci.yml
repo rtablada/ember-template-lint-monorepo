@@ -19,8 +19,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Node
         uses: actions/setup-node@v2
-        working-directory: 'frontend-ui'
         with:
+          cache-dependency-path: 'frontend-ui'
           node-version: 12.x
           cache: npm
       - name: Install Dependencies
@@ -38,8 +38,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Node
         uses: actions/setup-node@v2
-        working-directory: 'frontend-ui'
         with:
+          cache-dependency-path: 'frontend-ui'
           node-version: 12.x
           cache: npm
       - name: Install Dependencies

@@ -22,13 +22,13 @@ jobs:
         with:
           cache-dependency-path: 'frontend-ui'
           node-version: 12.x
-          cache: npm
+          cache: yarn
       - name: Install Dependencies
         working-directory: 'frontend-ui'
-        run: npm ci
+        run: yarn
       - name: Lint
         working-directory: 'frontend-ui'
-        run: npm run lint
+        run: yarn run lint
 
   test:
     name: "Test"
@@ -41,10 +41,10 @@ jobs:
         with:
           cache-dependency-path: 'frontend-ui'
           node-version: 12.x
-          cache: npm
+          cache: yarn
       - name: Install Dependencies
         working-directory: 'frontend-ui'
-        run: npm ci
+        run: yarn
       - name: Run Tests
         working-directory: 'frontend-ui'
-        run: npm test
+        run: yarn test

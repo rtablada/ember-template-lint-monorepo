@@ -14,7 +14,6 @@ jobs:
   lint:
     name: "Lint"
     runs-on: ubuntu-latest
-    working-directory: 'frontend-ui'
 
     steps:
       - uses: actions/checkout@v2
@@ -24,14 +23,15 @@ jobs:
           node-version: 12.x
           cache: npm
       - name: Install Dependencies
+        working-directory: 'frontend-ui'
         run: npm ci
       - name: Lint
+        working-directory: 'frontend-ui'
         run: npm run lint
 
   test:
     name: "Test"
     runs-on: ubuntu-latest
-    working-directory: 'frontend-ui'
 
     steps:
       - uses: actions/checkout@v2
@@ -41,6 +41,8 @@ jobs:
           node-version: 12.x
           cache: npm
       - name: Install Dependencies
+        working-directory: 'frontend-ui'
         run: npm ci
       - name: Run Tests
+        working-directory: 'frontend-ui'
         run: npm test
